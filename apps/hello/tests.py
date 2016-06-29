@@ -17,7 +17,7 @@ class ViewTests(TestCase):
     def test_home_view_passes_hardcoded_data(self):
 
         response = self.client.get('/')
-        self.assertEqual(response.context['name'], 'Name_from_View')
+        self.assertEqual(response.context['first_name'], 'Name_from_View')
         self.assertEqual(response.context['last_name'], 'Last_name_from_View')
         self.assertEqual(response.context['date_of_birth'], date.today())
         self.assertEqual(response.context['bio'], 'Bio test from view')
