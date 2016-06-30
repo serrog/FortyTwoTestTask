@@ -43,10 +43,12 @@ class ViewTests(TestCase):
         response = self.client.get('/')
         self.assertTemplateUsed(response, 'hello/home.html')
 
-    def test_home_view_passes_hardcoded_data(self):
+    def test_home_view_passes_data_from_DB(self):
         """
         view.home should contain correct context with all variables.
         """
+        create_two_persons()
+
         response = self.client.get('/')
         self.assertEqual(response.context['first_name'], 'testperson1_name')
         self.assertEqual(
