@@ -48,14 +48,18 @@ class ViewTests(TestCase):
         view.home should contain correct context with all variables.
         """
         response = self.client.get('/')
-        self.assertEqual(response.context['first_name'], 'Name_from_View')
-        self.assertEqual(response.context['last_name'], 'Last_name_from_View')
-        self.assertEqual(response.context['date_of_birth'], date.today())
-        self.assertEqual(response.context['bio'], 'Bio test from view')
-        self.assertEqual(response.context['email'], 'test_view@exampl.com')
-        self.assertEqual(response.context['jid'], 'jid_test_view@exampl.com')
-        self.assertEqual(response.context['skype'], 'skype_id')
-        self.assertEqual(response.context['other'], 'Other contacts from view')
+        self.assertEqual(response.context['first_name'], 'testperson1_name')
+        self.assertEqual(
+            response.context['last_name'], 'testperson1_last_name'
+        )
+        self.assertEqual(response.context['date_of_birth'], date(2000, 1, 1))
+        self.assertEqual(response.context['bio'], 'testperson1 long long bio')
+        self.assertEqual(response.context['email'], 'test1@example.com')
+        self.assertEqual(response.context['jid'], 'jid_test1@example.com')
+        self.assertEqual(response.context['skype'], 'test1_skype_id')
+        self.assertEqual(
+            response.context['other'], 'testperson1 other contacts'
+        )
 
 
 class ModelTests(TestCase):
@@ -63,28 +67,7 @@ class ModelTests(TestCase):
         """
         tests that DB can save and retrieve information about person
         """
-        person1 = Person()
-        person1.first_name = 'testperson1_name'
-        person1.last_name = 'testperson1_last_name'
-        person1.date_of_birth = date(2000, 1, 1)
-        person1.bio = 'testperson1 long long bio'
-        person1.email = 'test1@example.com'
-        person1.jid = 'jid_test1@example.com'
-        person1.skype = 'test1_skype_id'
-        person1.other = 'testperson1 other contacts'
-        person1.save()
-
-        person2 = Person()
-        person2.first_name = 'testperson2_name'
-        person2.last_name = 'testperson2_last_name'
-        person2.date_of_birth = date(1998, 11, 1)
-        person2.bio = 'testperson2 long long bio'
-        person2.email = 'test2@example.com'
-        person2.jid = 'jid_test2@example.com'
-        person2.skype = 'test2_skype_id'
-        person2.other = 'testperson2 other contacts'
-        person2.username = 'test2@example.com'
-        person2.save()
+        create_two_persons()
 
         persons = Person.objects.all()
 
