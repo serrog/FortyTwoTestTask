@@ -11,6 +11,8 @@ class SomeTests(TestCase):
 
 
 class ViewTests(TestCase):
+    fixtures = ['_initial_data.json']
+
     def test_home_view_uses_correct_template(self):
         """
         views.home should return correct template 'hello/home.html'
@@ -39,6 +41,8 @@ class ViewTests(TestCase):
 
 
 class ModelTests(TestCase):
+    fixtures = ['_initial_data.json']
+
     def test_saving_and_retrieving_items(self):
         """
         tests that DB can save and retrieve information about person
