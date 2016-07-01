@@ -26,17 +26,17 @@ class ViewTests(TestCase):
         """
 
         response = self.client.get('/')
-        self.assertEqual(response.context['first_name'], 'fixtperson1_name')
+        self.assertEqual(response.context['first_name'], 'Sergii')
         self.assertEqual(
-            response.context['last_name'], 'fixtperson1_last_name'
+            response.context['last_name'], 'Roganin'
         )
-        self.assertEqual(response.context['date_of_birth'], date(1990, 1, 1))
-        self.assertEqual(response.context['bio'], 'fixtperson1 long long bio')
-        self.assertEqual(response.context['email'], 'fixt1@example.com')
-        self.assertEqual(response.context['jid'], 'jid_fixt1@example.com')
-        self.assertEqual(response.context['skype'], 'fixt1_skype_id')
+        self.assertEqual(response.context['date_of_birth'], date(1973, 11, 25))
+        self.assertEqual(response.context['bio'], 'was born many years ago')
+        self.assertEqual(response.context['email'], 'roganin@me.com')
+        self.assertEqual(response.context['jid'], 'serrog@42cc.co')
+        self.assertEqual(response.context['skype'], 'sergio_rini')
         self.assertEqual(
-            response.context['other'], 'fixtperson1 other contacts'
+            response.context['other'], 'nothing else'
         )
 
 
@@ -51,11 +51,11 @@ class ModelTests(TestCase):
         persons = Person.objects.all()
 
         self.assertEqual(persons.count(), 1)
-        self.assertEqual(persons[0].first_name, 'fixtperson1_name')
-        self.assertEqual(persons[0].last_name, 'fixtperson1_last_name')
-        self.assertEqual(persons[0].date_of_birth, date(1990, 1, 1))
-        self.assertEqual(persons[0].bio, 'fixtperson1 long long bio')
-        self.assertEqual(persons[0].email, 'fixt1@example.com')
-        self.assertEqual(persons[0].jid, 'jid_fixt1@example.com')
-        self.assertEqual(persons[0].skype, 'fixt1_skype_id')
-        self.assertEqual(persons[0].other, 'fixtperson1 other contacts')
+        self.assertEqual(persons[0].first_name, 'Sergii')
+        self.assertEqual(persons[0].last_name, 'Roganin')
+        self.assertEqual(persons[0].date_of_birth, date(1973, 11, 25))
+        self.assertEqual(persons[0].bio, 'was born many years ago')
+        self.assertEqual(persons[0].email, 'roganin@me.com')
+        self.assertEqual(persons[0].jid, 'serrog@42cc.co')
+        self.assertEqual(persons[0].skype, 'sergio_rini')
+        self.assertEqual(persons[0].other, 'nothing else')

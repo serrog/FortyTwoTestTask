@@ -3,14 +3,14 @@
     "model": "hello.person",
     "pk": 1,
     "fields": {
-      "first_name": "fixtperson1_name",
-      "last_name": "fixtperson1_last_name",
-      "date_of_birth": "1990-01-01",
-      "bio": "fixtperson1 long long bio",
-      "email": "fixt1@example.com",
-      "jid": "jid_fixt1@example.com",
-      "skype": "fixt1_skype_id",
-      "other": "fixtperson1 other contacts"
+      "first_name": "Sergii",
+      "last_name": "Roganin",
+      "date_of_birth": "1973-11-25",
+      "bio": "was born many years ago",
+      "email": "roganin@me.com",
+      "jid": "serrog@42cc.co",
+      "skype": "sergio_rini",
+      "other": "nothing else"
     }
   }
 ]
