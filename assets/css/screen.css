@@ -1,1 +1,22 @@
- 
+h3 {
+    margin: 30px;
+}
+div .column {
+    float: left;
+    width: 43%;
+    margin: 0 3%;
+}
+.hard-data{
+    padding: 7px 0 0 10px;
+    text-align: left;
+    font-weight: 400;
+} 
+.temp-label{
+    padding-top: 7px;
+    margin-bottom: 0;
+    text-align: left;
+}
+textarea{
+    border-style: none;
+    resize: none;
+}

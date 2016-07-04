@@ -1,0 +1,16 @@
+[
+  {
+    "model": "hello.person",
+    "pk": 1,
+    "fields": {
+      "first_name": "Sergii",
+      "last_name": "Roganin",
+      "date_of_birth": "1973-11-25",
+      "bio": "was born many years ago",
+      "email": "roganin@me.com",
+      "jid": "serrog@42cc.co",
+      "skype": "sergio_rini",
+      "other": "nothing else"
+    }
+  }
+]
