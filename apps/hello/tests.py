@@ -4,12 +4,6 @@ from datetime import date
 from apps.hello.models import Person
 
 
-class SomeTests(TestCase):
-    def test_math(self):
-        "put docstrings in your tests"
-        assert(2 + 2 == 4)
-
-
 class ViewTests(TestCase):
     fixtures = ['_initial_data.json']
 
